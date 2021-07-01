@@ -3,7 +3,8 @@
 
 <head>
 	<title>Peeyush Agarwal - Grade 7 E - Group 4 - Hindi Integrated Project</title>
-	<link rel="shortcut icon" href="Poster.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="Poster.png" type="image/x-iconss" />
+	<audio autoplay loop src="Favorite Audio.mp3" type="audio/fileextension" id="bg-music"></audio>
 </head>
 <style>
 	#arrow {
@@ -136,7 +137,7 @@
 												June 3, 2021
 											</td>
 											<td>
-												<ul style="list-style:armenian">
+												<ul>
 													<li>
 														Programmed game characters
 													</li>
@@ -173,7 +174,7 @@
 										</thead>
 										<tr>
 											<td>
-												May 27
+												May 27, 2021
 											</td>
 											<td>
 												<ul>
@@ -191,7 +192,7 @@
 										</tr>
 										<tr>
 											<td>
-												June 27
+												June 27, 2021
 											</td>
 											<td>
 												<ul style="background-color: blue; color:yellow">
@@ -208,7 +209,7 @@
 										</tr>
 										<tr>
 											<td>
-												June 29
+												June 29, 2021
 											</td>
 											<td>
 												<ul>
@@ -233,7 +234,7 @@
 										</tr>
 										<tr>
 											<td>
-												June 30
+												June 30, 2021
 											</td>
 											<td>
 												<ul>
@@ -259,6 +260,46 @@
 												</ul>
 											</td>
 										</tr>
+										<tr>
+											<td>
+												July 1, 2021
+											</td>
+											<td>
+												<ul>
+													<div style="background-color: blanchedalmond; color: crimson;">
+														<strong>
+															<li>
+																Added background music
+															</li>
+															<li>
+																Back button modification, instead of full reload, just
+																hiding other elements like the core table and the
+																presentation
+															</li>
+														</div>
+														<div style="color: blanchedalmond; background-color: crimson;">
+															<li>
+																Added sound volume control
+															</li>
+															<li>
+																Added sound auto change according to content on screen. 
+																<br> It will make the sound confortable according to the content.
+																<br>
+															</div>
+																<details style="color: crimson; background-color: greenyellow;">
+																	<summary>
+																		Show details of comfort levels of sound (click on the arrow to expand content)
+																	</summary>
+																	Ex. if you are on the presentation, then it <br> would make the sound lower so that you can hear me speaking, <br> and if you are on the cores, <br> then it would make it comfortable for reading too.
+																</details>
+															</li>
+														</strong>
+													<li>
+														Updated GitHub repo.
+													</li>
+												</ul>
+											</td>
+										</tr>
 									</table>
 								</td>
 							</tr>
@@ -278,6 +319,9 @@
 			draggable=false width='40' height='40' />
 		</img>
 	</button>
+	<h2>
+		You can change the volume of the music using this slider: <input type="range" max="7" min="3" step="0.001" id="volume-slider" onchange="changeVolume()">
+	</h2>
 </body>
 
 </html>
