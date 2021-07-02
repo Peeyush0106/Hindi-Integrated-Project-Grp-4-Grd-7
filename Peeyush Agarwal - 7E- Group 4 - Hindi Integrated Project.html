@@ -1,12 +1,9 @@
 <!DOCTYPE html>
+</!DOCTYPE html>
 <html>
 
 <head>
 	<title>Peeyush Agarwal - Grade 7 E - Group 4 - Hindi Integrated Project</title>
-	<link rel="shortcut icon" href="Poster.png" type="image/x-iconss" />
-	<audio autoplay id="bg-music">
-		<source src="Favorite Audio.mp3">
-	</audio>
 </head>
 <style>
 	#arrow {
@@ -67,8 +64,6 @@
 		font-size: 19.5px;
 	}
 </style>
-
-<script src="app.js"></script>
 
 <body style="background-color: lightblue">
 	<div width=" 100%">
@@ -139,7 +134,7 @@
 												June 3, 2021
 											</td>
 											<td>
-												<ul>
+												<ul style="list-style:armenian">
 													<li>
 														Programmed game characters
 													</li>
@@ -176,7 +171,7 @@
 										</thead>
 										<tr>
 											<td>
-												May 27, 2021
+												May 27
 											</td>
 											<td>
 												<ul>
@@ -194,7 +189,7 @@
 										</tr>
 										<tr>
 											<td>
-												June 27, 2021
+												June 27
 											</td>
 											<td>
 												<ul style="background-color: blue; color:yellow">
@@ -211,7 +206,7 @@
 										</tr>
 										<tr>
 											<td>
-												June 29, 2021
+												June 29
 											</td>
 											<td>
 												<ul>
@@ -236,7 +231,7 @@
 										</tr>
 										<tr>
 											<td>
-												June 30, 2021
+												June 30
 											</td>
 											<td>
 												<ul>
@@ -262,74 +257,9 @@
 												</ul>
 											</td>
 										</tr>
-										<tr>
-											<td>
-												July 1, 2021
-											</td>
-											<td>
-												<ul>
-													<div style="background-color: blanchedalmond; color: crimson;">
-														<strong>
-															<li>
-																Added background music
-															</li>
-															<li>
-																Back button modification, instead of full reload, just
-																hiding other elements like the core table and the
-																presentation
-															</li>
-													</div>
-													<div style="color: blanchedalmond; background-color: crimson;">
-														<li>
-															Added sound volume control
-														</li>
-														<li>
-															Added sound auto change according to content on screen.
-															<br> It will make the sound confortable according to the
-															content.
-															<br>
-													</div>
-													<details style="color: crimson; background-color: greenyellow;">
-														<summary>
-															Show details of comfort levels of sound (click on the arrow
-															to expand content)
-														</summary>
-														Ex. if you are on the presentation, then it <br> would make the
-														sound lower so that you can hear me speaking, <br> and if you
-														are on the cores, <br> then it would make it comfortable for
-														reading too.
-													</details>
-													</li>
-													</strong>
-													<li>
-														Updated GitHub repo.
-													</li>
-												</ul>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												July 2, 2021
-											</td>
-											<td>
-												<ul>
-													<div style="color:chocolate; background-color:darkblue;">
-														<strong>
-															<li>
-																Added Chrome compatibilty
-															</li>
-															<li>
-																Made compatibility global
-															</li>
-														</strong>
-													</div>
-												</ul>
-											</td>
-										</tr>
 									</table>
 								</td>
 							</tr>
-						</tbody>
 					</table>
 				</td>
 			</tr>
@@ -346,10 +276,35 @@
 			draggable=false width='40' height='40' />
 		</img>
 	</button>
-	<h2>
-		You can change the volume of the music using this slider: <input type="range" max="7" min="0" step="0.001"
-			value="6" id="volume-slider" onchange="changeVolume()">
-	</h2>
 </body>
+<script>
+	function displayIframe() {
+		// document.getElementById("iframeDisplay").innerHTML = '<iframe width="10003.2px" height="660px" id="presentation" src="https://sway.office.com/s/RZbkq9L4GzE9jSEv/embed" frameborder="0" marginheight="0"marginwidth="0" max-width="100%" sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts" scrolling="no" style="border: none; max-width: 100%; max-height: 100vh; width="100%";    height="100%"" allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen></iframe>';
+		document.getElementById("iframeDisplay").innerHTML = '<iframe id="presentation" src="https://sway.office.com/s/Y2p3a5ecTTUM9vlF/embed" frameborder="0" marginheight="0"marginwidth="0" max-width="100%" sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts" scrolling="no" style="border: none; max-width: 100%; max-height: 100vh; width="100%"; height="100%"" allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen></iframe>';
+		document.getElementById("iframeDisplay").style.display = "block";
+		hideButtons();
+		document.getElementById("back-button").style.display = "block";
+		document.getElementById("presentation").width = window.screen.width - 270;
+		document.getElementById("presentation").height = window.screen.height - 270;
+		document.getElementById("marquee-txt").style.display = "none";
+		document.getElementById("app-cretor-txt").style.display = "none";
+	}
+	function screenWidth() {
+		console.log(screen.availWidth + "px");
+		return screen.availWidth + "px";
+	}
+	function showCore() {
+		hideButtons();
+		document.getElementById("core-table").style.display = "block";
+		document.getElementById("back-button").style.display = "block";
+	}
+	function hideButtons() {
+		document.getElementById("button1").style.display = "none";
+		document.getElementById("button2").style.display = "none";
+	}
+	function showHomePage() {
+		location.reload();
+	}
+</script>
 
 </html>
