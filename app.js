@@ -1,5 +1,37 @@
-document.getElementById("bg-music").volume = 0.06;
-document.getElementById("bg-music").value = 0.6;
+var music, musicLoaded, musicVol;
+
+function preload() {
+    music = loadSound("Favorite-Audio.mp3", setMusicVol());
+}
+
+function setMusicVol() {
+    musicLoaded = true;
+}
+
+function draw() {
+    if (document.getElementById("iframeDisplay").innerHTML !== "") {
+        musicVol = 0.4;
+        document.getElementById("volume-slider").value = 3.5;
+    }
+    if (document.getElementById("core-table").style.display === "block") {
+        musicVol = 0.52;
+        document.getElementById("volume-slider").value = 5;
+    }
+    if (document.getElementById("back-button").style.display === "none") {
+        musicVol = 0.7;
+        document.getElementById("volume-slider").value = 7;
+    }
+    if (musicLoaded) {
+        music.play();
+        musicLoaded = false;
+        alert("If the background music has not started, please refresh the page. If you can hear some music, then you are ready to continue.");
+    }
+    music.setVolume(musicVol);
+}
+
+function setup() {
+    canvas = createCanvas(1, 1);
+}
 
 function displayIframe() {
     document.getElementById("iframeDisplay").innerHTML = '<iframe id="presentation" src="https://sway.office.com/s/Y2p3a5ecTTUM9vlF/embed" frameborder="0" marginheight="0"marginwidth="0" max-width="100%" sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts" scrolling="no" style="border: none; max-width: 100%; max-height: 100vh; width="100%"; height="100%"" allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen></iframe>';
@@ -11,15 +43,11 @@ function displayIframe() {
     document.getElementById("presentation").focus();
     document.getElementById("marquee-txt").innerHTML = "";
     document.getElementById("app-cretor-txt").style.display = "none";
-    document.getElementById("bg-music").volume = 0.035;
-    document.getElementById("volume-slider").value = 3.5;
 }
 function showCore() {
     hideButtons();
     document.getElementById("core-table").style.display = "block";
     document.getElementById("back-button").style.display = "block";
-    document.getElementById("bg-music").volume = 0.05;
-    document.getElementById("volume-slider").value = 5;
 }
 function hideButtons() {
     document.getElementById("button1").style.display = "none";
@@ -32,11 +60,8 @@ function showHomePage() {
     document.getElementById("button1").style.display = "block";
     document.getElementById("button2").style.display = "block";
     document.getElementById("marquee-txt").innerHTML = '<h1 style = "color: blue" > Hindi Integrated Project Group 4 - 7E</h1 > <h1 style="color: orange"> - by Peeyush</h1>';
-    document.getElementById("bg-music").volume = 0.07;
-    document.getElementById("volume-slider").value = 7;
 }
 
 function changeVolume() {
-    document.getElementById("bg-music").volume = parseInt((document.getElementById("volume-slider").value)) / 100;
-    console.log(document.getElementById("bg-music").volume);
+    musicVol = (parseInt((document.getElementById("volume-slider").value)) / 10);
 }

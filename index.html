@@ -4,9 +4,13 @@
 <head>
 	<title>Peeyush Agarwal - Grade 7 E - Group 4 - Hindi Integrated Project</title>
 	<link rel="shortcut icon" href="Poster.png" type="image/x-iconss" />
-	<audio autoplay id="bg-music">
+	<!-- <audio autoplay id="bg-music">
 		<source src="Favorite Audio.mp3">
-	</audio>
+	</audio> -->
+	<script src="p5.js"></script>
+	<script src="p5.dom.min.js"></script>
+	<script src="p5.sound.min.js"></script>
+	<script src="p5.play.js"></script>
 </head>
 <style>
 	#arrow {
@@ -90,7 +94,7 @@
 	<button onclick="showCore()" class="button" id="button2">View my Project Core</button>
 	<div id="iframeDisplay"></div>
 	<h1 id="app-cretor-txt" style="color: yellow; background-color: black;">
-		Hey, and you know? I have made this app for your best experience and smooth flow of my project.
+		Hey, you know? I have made this app for your best experience and smooth flow of my project.
 	</h1>
 	<table border="6" id="core-table">
 		<thead>
@@ -313,16 +317,27 @@
 											</td>
 											<td>
 												<ul>
-													<div style="color:chocolate; background-color:darkblue;">
-														<strong>
+													<strong>
+														<div style="color:chocolate; background-color:darkblue;">
 															<li>
 																Added Chrome compatibilty
 															</li>
 															<li>
 																Made compatibility global
 															</li>
-														</strong>
-													</div>
+														</div>
+														<div style="color:chartreuse; background-color:darkblue;">
+															<li>
+																Troubleshooted Chrome compatibility error
+															</li>
+															<li>
+																Made auto-update of volume of music effecient.
+															</li>
+														</div>
+													</strong>
+													<li>
+														Added full name in marquee
+													</li>
 												</ul>
 											</td>
 										</tr>
@@ -336,19 +351,15 @@
 		</tbody>
 	</table>
 	<br>
-	<button id="back-button" style='
-	background-color: lightblue;
-	width: "40";
-	height:"40";
-	border: none;
-	display: none;' onclick="showHomePage();">
+	<button id="back-button" style='background-color: lightblue; width: "40"; height:"40";	border: none; display: none;'
+		onclick="showHomePage();">
 		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Back_Arrow.svg/1200px-Back_Arrow.svg.png'
-			draggable=false width='40' height='40' />
+			draggable='false' width='40' height='40'>
 		</img>
 	</button>
 	<h2>
-		You can change the volume of the music using this slider: <input type="range" max="7" min="0" step="0.001"
-			value="6" id="volume-slider" onchange="changeVolume()">
+		You can change the volume of the music using this
+		slider: <input type="range" max="7" min="0" step="0.001" value="6" id="volume-slider" onchange="changeVolume()">
 	</h2>
 </body>
 
